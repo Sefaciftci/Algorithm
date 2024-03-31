@@ -88,14 +88,42 @@ console.log(solution2(872))
 
 
 
-/*Soru 6 : arr= [1,2,4,2,-3,3,-1,6] tekrar eden değerleri sil kalan dizi elemanlarını topla
 
-function solution(arr) {
-    for(let i = 0 ; i< arr.length ; i++){
-        
+/*Soru 6 : arr = [-2,2,5,1,-2,1] output = 6 arr = [-2,2,5,1] dizi içinde tekrar eden değerleri sil yeni diziyi topla
+
+const solution = (arr) => {
+    const newArr = [...new Set(arr)] //set veri yapısı  bize tekrar eden dizileri atar ve yeni bir dizi oluştururuz.
+    // geriye kalan işlemde yeni dizi içindeki elemanları toplama bunu for ya da reduce ile yapalım 
+    //return newArr.reduce((a,b) => a + b , 0 )
+    toplam = 0;
+    for(let i = 0 ; i < newArr.length ; i++){
+        toplam = toplam + newArr[i];
     }
+    return toplam
+}   
+console.log(solution([-2,2,5,1,-2,1]))
+*/
+
+/*Soru 7: input: 123 output: 321 , input:120 output:21 , input : -123 , output:-321   verilen sayıyı ters cevir ve yazdır verilen şartlarra uyarak 
+
+function solution(num){ 
+    let arr = num.toString().split('') //reverse() te kullanabilrdik diziyi ters cevirmemizi sağlar
+    let newArr = []
+    for(let uzunluk = arr.length-1;  0 <= uzunluk; uzunluk--){ 
+        newArr.push(arr[uzunluk]);
+    }
+    let sayi = newArr.reduce((a,b)=> a + b , '');    
+    return Number(sayi);
 }
-console.log(solution([1,2,4,2,-3,3,-1,6]))
+console.log(solution(1030))
+
+
+function solution2(num){
+    return num < 0 ?  -1 * Number(num.toString().split('').filter(r => r!= '-').reverse().join('')) 
+    : Number(num.toString().split('').filter(r => r!= '-').reverse().join(''));
+}
+console.log(solution2(-123));
+
 */
 
 
