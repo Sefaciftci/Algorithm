@@ -127,6 +127,32 @@ console.log(solution2(-123));
 */
 
 
+//Soru 8: Arr = [2,4,12,21] , num : 6  => 2+4 =6 return [0,1] indexlerini bize dön
+
+
+const solution = (arr , num) => {
+    for(let i = 0 ; i < arr.length-1; i++){
+        for(let j= 0; j < arr.length; j++){
+            if(arr[i] + arr[j] == num){
+                return [i,j];
+            }
+        }
+    }   
+}
+console.log(solution([2,4,12,21,5], 7))
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
