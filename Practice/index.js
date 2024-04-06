@@ -104,6 +104,8 @@ const solution = (arr) => {
 console.log(solution([-2,2,5,1,-2,1]))
 */
 
+
+
 /*Soru 7: input: 123 output: 321 , input:120 output:21 , input : -123 , output:-321   verilen sayıyı ters cevir ve yazdır verilen şartlarra uyarak 
 
 function solution(num){ 
@@ -127,7 +129,9 @@ console.log(solution2(-123));
 */
 
 
-//Soru 8: Arr = [2,4,12,21] , num : 6  => 2+4 =6 return [0,1] indexlerini bize dön
+
+
+/*Soru 8: Arr = [2,4,12,21] , num : 6  => 2+4 =6 return [0,1] indexlerini bize dön
 
 
 const solution = (arr , num) => {
@@ -140,11 +144,18 @@ const solution = (arr , num) => {
     }   
 }
 console.log(solution([2,4,12,21,5], 7))
+*/
 
 
 
+/*Soru 9: arr1 = [2,5,3] arr2 = [5,3,6] = 352 + 635 = 987  2 array al bunları ters rakam yap ve ter cevir ve topla.*/
 
 
+const solution = (arr1 , arr2) => {
+    //join ile arr eyi birleştirebiliriz
+    return  Number(arr1.reverse().join('')) + Number(arr2.reverse().join(''));
+}
+console.log(solution([2,5,3],[5,3,6]))
 
 
 
