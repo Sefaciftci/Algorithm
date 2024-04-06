@@ -148,14 +148,31 @@ console.log(solution([2,4,12,21,5], 7))
 
 
 
-/*Soru 9: arr1 = [2,5,3] arr2 = [5,3,6] = 352 + 635 = 987  2 array al bunları ters rakam yap ve ter cevir ve topla.*/
-
+/*Soru 9: arr1 = [2,5,3] arr2 = [5,3,6] = 352 + 635 = 987  2 array al bunları ters rakam yap ve ter cevir ve topla.
 
 const solution = (arr1 , arr2) => {
     //join ile arr eyi birleştirebiliriz
     return  Number(arr1.reverse().join('')) + Number(arr2.reverse().join(''));
 }
 console.log(solution([2,5,3],[5,3,6]))
+*/
+
+
+/*Soru 10: arr1 =  arr2 = [4,2,5]  newArr = [2,4,4,2,5] yeni arrayin medyanını al (ortanca değer) = "4" 
+arr1 = [2,3] arr2 = [4,5]  newArr = [2,3,4,5] 3+4 =7/2 = 3.5
+*/
+
+const solution = (arr1, arr2) => {
+    arr1.push(...arr2); // arr2 elemanlarını arr1 e ekledik spread ile 
+    arr1.sort((a,b)=> a-b  ); //sort metodu ile küçükten büyüğe sıraladık
+    
+    if(arr1.length % 2 == 1){
+        return arr1[ Math.floor(arr1.length/2)]
+    }else{
+        return  (arr1[ Math.floor(arr1.length/2)-1] +  + arr1[ Math.floor(arr1.length/2)]) / 2 ;
+    }
+}
+console.log(solution([1,2,3] , [6,7]))
 
 
 
